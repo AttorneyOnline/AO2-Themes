@@ -1,0 +1,33 @@
+Theme created by CFW. Srs. It took hella long. T-T.
+
+This theme is based off the Neptunia series of games, though I *mostly* kept their actual chars and copyrights out of the theme to make it as free from err...copyrights I dunno. Have fun.~
+
+Saying Copyrights twice. Real smart CFW. Real wise.
+
+----------------------------------------------------------------------------------------------
+Hyperdimension Neptunia Theme
+___________________________________________________________________
+Current Version :  2.0
+
+Changes :  
+
+ - Added Custom Witness/Cross Examination Buttons.
+ - Added Custom...Custom Button. (Sheesh. Groundbreaking language in this read me!)
+ - Fixed the appearance of some buttons.
+ - Fixed the issues with the evidence drop down.
+ - Fixed some spacing and gaps the last version add.
+ - Fixed BG.png
+ - Finally customized the helath bars and plus minus buttons.
+ - Customized the placeholders. 
+ -Basically customized just about everything except the shouts. Because Ain't nobody got tim-*shot*
+  *And zoom animations but That's all gonna be version 3 I guess.
+ - Added Alternate Courtroom backgrounds, including the original.
+ - This also includes the orignal lobby if you prefered the blander version.
+
+--------------------------------------------------------------------
+
+Version 1 : 
+
+- Original Concept Design.
+- Evidence, Lobby, Char Select, Text boxes and buttons.
+- Arrow Keys, About Button, Shout Buttons.

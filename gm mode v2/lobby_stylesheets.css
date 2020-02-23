@@ -1,0 +1,42 @@
+[SERVER DESCRIPTION]
+
+QTextBrowser {
+	background-color: transparent;
+	font-size: 10px;
+	color: white;
+	font-family: Ubuntu-Bold;
+	border-radius: 0px;
+	border-color: transparent;
+}
+
+[SERVER LIST]
+
+QListView::item { padding-left: 0px; }
+
+QListView {
+	background-color: transparent;
+	font-family: Ubuntu-Bold;}
+
+}
+
+QListWidget {
+	border-spacing: 5px;
+	border-radius: 5px;
+	font-size: 13px;
+	font-family: Ubuntu-Bold;
+	color: white;
+}
+
+[CHAT BOX]
+
+QTextBrowser {
+	background-color: transparent;
+	color: white;
+	font-size: 13px;
+	font-family: Ubuntu-Bold;
+	color: white;
+	border-radius: 0px;
+	border-color: transparent;
+}
+
+[END]
