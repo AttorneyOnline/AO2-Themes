@@ -1,0 +1,73 @@
+/* [TEXT COLOR] */
+
+QComboBox {
+border: 1px solid rgba(20, 0, 20, 150);
+background-color: black;
+color: white;
+border-radius: 3px;}
+
+QComboBox QAbstractItemView {
+border: 1px solid rgba(20, 0, 20, 150);
+background-color: white;
+color: black;
+border-radius: 0px;
+selection-background-color: red;}
+
+/* [POS DROPDOWN] */
+
+QComboBox {
+border: 1px solid rgba(20, 0, 20, 150);
+background-color: black;
+color: white;
+border-radius: 3px;}
+
+QComboBox QAbstractItemView {
+border: 1px solid rgba(20, 0, 20, 150);
+background-color: white;
+color: black;
+border-radius: 0px;
+selection-background-color: red;}
+
+
+/* [THEME LIST] */
+
+QComboBox {
+border: 1px solid rgba(20, 0, 20, 150);
+background-color: black;
+color: white;
+border-radius: 3px;}
+
+QComboBox QAbstractItemView {
+border: 2px solid darkgray;
+background-color: white;
+color: black;
+border-radius: 0px;
+selection-background-color: red;}
+
+/* [EMOTE DROPDOWN] */
+
+QComboBox {
+border: 1px solid rgba(20, 0, 20, 150);
+background-color: black;
+color: white;
+border-radius: 3px;}
+
+QComboBox QAbstractItemView {
+border: 1px solid rgba(20, 0, 20, 150);
+background-color: white;
+color: black;
+border-radius: 0px;
+selection-background-color: red;}
+
+/* [MUTE LIST] */
+
+QListView {
+color: black;
+background-color: white;
+selection-background-color:red;}
+
+QListWidget::item:hover { background-color: red; }
+
+}
+
+/* [END] */
