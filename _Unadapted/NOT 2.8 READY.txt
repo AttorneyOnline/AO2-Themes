@@ -1,0 +1,1 @@
+These themes are not adapted for 2.8! They will need TLC to be properly integrated.
