@@ -31,6 +31,7 @@ QAbstractItemView {
 
 QListView {
 	color: black;
+	background-color:white;
 	selection-background-color: darkgreen;
 }
 
