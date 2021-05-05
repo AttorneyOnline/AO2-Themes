@@ -52,7 +52,7 @@ QScrollBar::sub-page {
 	background: none
 }
 
-QPushButton {
+AOButton {
 	background:darkgray;
 }
 
