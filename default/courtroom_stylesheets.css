@@ -62,3 +62,7 @@ QSlider::handle {
 	border-radius: 3px;
 }
 
+
+QTextBrowser#ui_debug_log {
+	background-color: rgba(20, 20, 20, 255);
+}
