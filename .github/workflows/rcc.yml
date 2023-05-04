@@ -3,7 +3,7 @@ name: RCC files
 on: [push, pull_request]
 
 jobs:
-  build:
+  rcc-compile:
 
     runs-on: ubuntu-latest
 
@@ -29,7 +29,7 @@ jobs:
           echo '    <file>lobby_assets/up-arrow.png</file>' >> ./default/theme.qrc
           echo '</qresource>' >> ./default/theme.qrc
           echo '</RCC>' >> ./default/theme.qrc
-          echo '1' > version
+          echo '1' > ./default/version
 
       - name: compile RCC
         run: |
