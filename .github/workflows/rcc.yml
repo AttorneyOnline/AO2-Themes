@@ -11,22 +11,9 @@ jobs:
       - uses: actions/checkout@master
         with:
           submodules: recursive
-      - uses: actions/setup-python@master
-        with:
-          python-version: '3.10'
           
-      - name: actions/cache qt
-        uses: actions/cache@master
-        id: cache
-        with:
-          path: qt/${{matrix.version}}/${{matrix.platform}}
-          key: qt-${{matrix.version}}-${{matrix.platform}}
-
-      - uses: Skycoder42/action-setup-qt@master
-        id: qt
-        with:
-          version: 5.15.1
-          platform: gcc_64
+      - name: Install RCC
+        run: sudo apt install qtbase5-dev-tools
 
       - name: default RCC
         run: |
