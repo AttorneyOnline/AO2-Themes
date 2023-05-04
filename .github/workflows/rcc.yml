@@ -33,7 +33,7 @@ jobs:
           platform: gcc_64
 
       - name: default RCC
-        runs: |
+        run: |
           echo '<!DOCTYPE RCC><RCC version="1.0">' > ./default/theme.qrc
           echo '<qresource prefix="/base/themes/default">' >> ./default/theme.qrc
           echo '    <file>charselect.ui</file>' >> ./default/theme.qrc
@@ -49,6 +49,6 @@ jobs:
           echo '1' > version
 
       - name: compile RCC
-        runs: |
+        run: |
           cd default
           rcc -binary theme.qrc -o theme.rcc
