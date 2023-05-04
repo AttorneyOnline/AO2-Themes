@@ -1,0 +1,54 @@
+name: RCC files
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+        with:
+          submodules: recursive
+      - uses: actions/setup-python@master
+        with:
+          python-version: '3.10'
+          
+      - name: actions/cache qt
+        uses: actions/cache@master
+        id: cache
+        with:
+          path: qt/${{matrix.version}}/${{matrix.platform}}
+          key: qt-${{matrix.version}}-${{matrix.platform}}
+
+      - uses: Skycoder42/action-setup-qt@master
+        id: qt
+        with:
+          version: 5.15.1
+          platform: gcc_64
+
+      - name: default RCC
+        runs: |
+          echo '<!DOCTYPE RCC><RCC version="1.0">' > ./default/theme.qrc
+          echo '<qresource prefix="/base/themes/default">' >> ./default/theme.qrc
+          echo '    <file>charselect.ui</file>' >> ./default/theme.qrc
+          echo '    <file>direct_connect_dialog.ui</file>' >> ./default/theme.qrc
+          echo '    <file>favorite_server_dialog.ui</file>' >> ./default/theme.qrc
+          echo '    <file>lobby.ui</file>' >> ./default/theme.qrc
+          echo '    <file>options_dialog.ui</file>' >> ./default/theme.qrc
+          echo '    <file>version</file>' >> ./default/theme.qrc
+          echo '    <file>lobby_assets/down-arrow.png</file>' >> ./default/theme.qrc
+          echo '    <file>lobby_assets/up-arrow.png</file>' >> ./default/theme.qrc
+          echo '</qresource>' >> ./default/theme.qrc
+          echo '</RCC>' >> ./default/theme.qrc
+          echo '1' > version
+
+      - name: compile RCC
+        runs: |
+          cd default
+          rcc -binary theme.qrc -o theme.rcc
