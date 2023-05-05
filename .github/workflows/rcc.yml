@@ -16,6 +16,7 @@ jobs:
         run: sudo apt install qtbase5-dev-tools pngcrush
         
       - name: Crush all the files
+        if: github.ref == 'refs/heads/master'
         run: find . -iname '*png' -exec pngcrush -ow -brute {} {}.crush \;
 
       - name: default RCC
@@ -49,6 +50,11 @@ jobs:
                   echo "QRC file was missing"
                   echo '<!DOCTYPE RCC><RCC version="1.0">' > theme.qrc
                   echo "<qresource prefix=\"/base/themes/$theme\">" >> theme.qrc
+                  for i in *.ui;
+                  do
+                    echo "$i"
+                    echo "    <file>$i</file>" >> theme.qrc
+                  done
                   echo '    <file>version</file>' >> theme.qrc
                   echo '</qresource>' >> theme.qrc
                   echo '</RCC>' >> theme.qrc
