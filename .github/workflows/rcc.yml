@@ -41,6 +41,10 @@ jobs:
               fi
               if [ ! -e "theme.qrc" ] ; then
                 echo '<!DOCTYPE RCC><RCC version="1.0">' > theme.qrc
+                echo "<qresource prefix=\"/base/themes/$theme\">" >> theme.qrc
+                echo '    <file>version</file>' >> theme.qrc
+                echo '</qresource>' >> theme.qrc
+                echo '</RCC>' >> theme.qrc
               fi
               cd ..
             fi
