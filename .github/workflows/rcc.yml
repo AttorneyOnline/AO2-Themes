@@ -30,6 +30,21 @@ jobs:
           echo '</qresource>' >> ./default/theme.qrc
           echo '</RCC>' >> ./default/theme.qrc
           echo '1' > ./default/version
+          
+      - name: Other themes
+        run: |
+          for theme in ./*; do
+            if [ -d "$theme" ]; then
+              cd "$D"
+              if [ ! -e "version" ] ; then
+                echo '1' > version
+              fi
+              if [ ! -e "theme.qrc" ] ; then
+                echo '<!DOCTYPE RCC><RCC version="1.0">' > theme.qrc
+              fi
+              cd ..
+            fi
+          done
 
       - name: compile RCC
         run: |
