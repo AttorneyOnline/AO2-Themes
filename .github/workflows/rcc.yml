@@ -34,12 +34,15 @@ jobs:
         run: |
           for theme in ./*; do
             if [ -d "$theme" ]; then
-              cd "$D"
+              cd "$theme"
               if [ -f *.ui ]; then
+                echo "Found UI file for theme $theme"
                 if [ ! -e "version" ] ; then
+                  echo "Version file was missing!"
                   echo '1' > version
                 fi
                 if [ ! -e "theme.qrc" ] ; then
+                  echo "QRC file was missing"
                   echo '<!DOCTYPE RCC><RCC version="1.0">' > theme.qrc
                   echo "<qresource prefix=\"/base/themes/$theme\">" >> theme.qrc
                   echo '    <file>version</file>' >> theme.qrc
