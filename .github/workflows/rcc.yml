@@ -12,8 +12,11 @@ jobs:
         with:
           submodules: recursive
           
-      - name: Install RCC
+      - name: Install Dependencys
         run: sudo apt install qtbase5-dev-tools pngcrush
+        
+      - name: Crush all the files
+        run: find . -iname '*png' -exec pngcrush -ow -brute {} {}.crush \;
 
       - name: default RCC
         run: |
@@ -35,7 +38,8 @@ jobs:
           for theme in ./*; do
             if [ -d "$theme" ]; then
               cd "$theme"
-              if [ -f *.ui ]; then
+              count=`ls -1 *.ui 2>/dev/null | wc -l`
+              if [ $count != 0 ] ; then
                 echo "Found UI file for theme $theme"
                 if [ ! -e "version" ] ; then
                   echo "Version file was missing!"
