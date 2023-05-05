@@ -13,7 +13,7 @@ jobs:
           submodules: recursive
           
       - name: Install RCC
-        run: sudo apt install qtbase5-dev-tools
+        run: sudo apt install qtbase5-dev-tools pngcrush
 
       - name: default RCC
         run: |
@@ -29,22 +29,23 @@ jobs:
           echo '    <file>lobby_assets/up-arrow.png</file>' >> ./default/theme.qrc
           echo '</qresource>' >> ./default/theme.qrc
           echo '</RCC>' >> ./default/theme.qrc
-          echo '1' > ./default/version
           
       - name: Other themes
         run: |
           for theme in ./*; do
             if [ -d "$theme" ]; then
               cd "$D"
-              if [ ! -e "version" ] ; then
-                echo '1' > version
-              fi
-              if [ ! -e "theme.qrc" ] ; then
-                echo '<!DOCTYPE RCC><RCC version="1.0">' > theme.qrc
-                echo "<qresource prefix=\"/base/themes/$theme\">" >> theme.qrc
-                echo '    <file>version</file>' >> theme.qrc
-                echo '</qresource>' >> theme.qrc
-                echo '</RCC>' >> theme.qrc
+              if [ -f *.ui ]; then
+                if [ ! -e "version" ] ; then
+                  echo '1' > version
+                fi
+                if [ ! -e "theme.qrc" ] ; then
+                  echo '<!DOCTYPE RCC><RCC version="1.0">' > theme.qrc
+                  echo "<qresource prefix=\"/base/themes/$theme\">" >> theme.qrc
+                  echo '    <file>version</file>' >> theme.qrc
+                  echo '</qresource>' >> theme.qrc
+                  echo '</RCC>' >> theme.qrc
+                fi
               fi
               cd ..
             fi
@@ -54,3 +55,9 @@ jobs:
         run: |
           cd default
           rcc -binary theme.qrc -o theme.rcc
+          
+      - name: Upload Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: compiled-themes
+          path: ${{github.workspace}}/
