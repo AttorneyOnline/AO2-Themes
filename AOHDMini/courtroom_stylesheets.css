@@ -135,10 +135,11 @@ QAbstractItemView {
 
 QListView {
 	font-family: M Ying Hei HK W4;
-	color:#328CBD;
-	border: 0px;
-	border-radius: 0px;
+	color: #328CBD;
+	border: 5px solid #6a6ea9;
+	border-radius: 10px;
 	background-color: white;
+	border-color: black;
 	selection-background-color: #FFC321;
 }
 

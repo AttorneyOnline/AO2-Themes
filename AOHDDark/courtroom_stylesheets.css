@@ -134,9 +134,11 @@ QAbstractItemView {
 
 QListView {
 	font-family: M Ying Hei HK W4;
-	color: white;
-	border: 0px;
-	background-color: #1B1B1B;
+	color: #328CBD;
+	border: 5px solid #6a6ea9;
+	border-radius: 10px;
+	background-color: white;
+	border-color: black;
 	selection-background-color: #FFC321;
 }
 
@@ -161,7 +163,7 @@ QSlider::handle:horizontal {
 }
 
 QSlider::groove:horizontal { 
-	color: #F6F6F6;
+	color: #1B1B1B;
 }
 
 QScrollBar:horizontal {
